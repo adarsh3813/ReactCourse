@@ -1,0 +1,21 @@
+{
+  "name": "foodvillaapp",
+  "version": "1.0.0",
+  "description": "Food delivery app demo",
+  "main": "index.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parce build index.html",
+    "test": "jest"
+  },
+  "author": "Adarsh",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
