@@ -1,0 +1,52 @@
+Notes 3:
+
+1.  What is key in react, why used?
+
+    special attribute that needs to be included when rendering arrays of elements, helps React identify which items have changed,
+    added or removed, important for Efficient Reconciliation, Without keys, React may have to re-render the entire list whenever there's a change
+
+    Uses- optimises DOM operations, prevent rendering issues, Efficient Reconciliation
+
+2.  what does createElement return? (Object)
+
+    a JavaScript object that represents a React element, contents are- type, props, children
+
+3.  What is JSX? Is Jsx Html inside react? (No)
+
+    a syntax extension for JavaScript, allows to write HTML-like code directly within JavaScript, is a
+    separate language extension
+
+4.  How does JSX work? (Uses react intrnally)
+
+    Steps- Transpilation (transformed into standard JavaScript), changes to React.createElement, Virtual DOM representation
+
+5.  What converts JSX to React code? What is babel (Babel)
+
+    JSX- not directly understood by web browsers, babel is used to transpile JSX code into standard JavaScript that browsers can understand
+
+    Babel- is a JavaScript compiler, provides cross-browser compatibility, support for JSX
+
+6.  Why we use JSX?
+
+    has a more readable syntax, makes Component Composition easy,
+
+7.  How is babel included? how many package.json are in our project? Why?
+
+    Babel comes with parcel, can be installed separately, supports plug-ins to extend functionality
+
+    2 package.json, in node_modules, for storing data about verions of transitive dependencies
+
+8.  Cross site scripting attack, how jsx prevents? (Sanitization)
+
+    Points- Sanitization Libraries, Automatic Escaping,
+
+9.  What is component composition? (Use comp inside comp)
+
+    nesting one component inside another
+
+10. What are types of component? What is functional component
+
+    Types of component in react- Functional(new) and Class based(old)
+
+    Functional Component- It is a js function which returns some piece of react element.
+    Name of fun. component starts with capital letter.
