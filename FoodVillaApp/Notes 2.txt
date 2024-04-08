@@ -1,0 +1,22 @@
+1.  Input in react does not work by default- this is 
+    due to one-way data binding.
+    One way binding- helps to control when/where change happens in our local variable,
+    better optimization 
+
+    When we type in the text box react re-renders it 
+
+    If we need to need to maintain a variable that changes with text input data, then 
+    never use local variable (like const searchData)
+    We need a react kind of variable that maintains state??
+
+    Every component in react maintains a state 
+
+2.  What is hooks?
+
+    Hooks are just js functions, which have a specific functions (like useState() hook- create state variables).
+    It comes from react, using named import.
+
+    useState()-  returns an array, the element of the array is the var name
+
+3.  Synthetic events
+4. What is state in react? What are hooks? What is useState()? 
