@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Title = () => (
   <a href="/">
     <img
       className="logo"
       alt="logo"
-      src="https://1000logos.net/wp-content/uploads/2021/05/Swiggy-emblem.png"
+      src="https://cdn.worldvectorlogo.com/logos/zomato-1.svg"
     />
   </a>
 );
@@ -18,9 +19,15 @@ const Header = () => {
       <Title></Title>
       <div className="nav-items">
         <ul>
-          <li>Home</li>
-          <li>About</li>
-          <li>Contact</li>
+          <li>
+            <Link to="/">Home</Link>
+          </li>
+          <li>
+            <Link to="/about">About</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
+          </li>
           <li>Cart</li>
           {isLogggedIn ? (
             <button onClick={() => setIsLoggedIn(false)}>Logout</button>
