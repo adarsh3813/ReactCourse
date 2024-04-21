@@ -1,0 +1,60 @@
+/* Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #fff; /* Change the background color as needed */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-items ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+  }
+  
+  .nav-items ul li {
+    margin-right: 20px;
+  }
+  
+  .nav-items ul li:last-child {
+    margin-right: 0;
+  }
+  
+  .nav-items ul li a {
+    text-decoration: none;
+    color: #333; /* Change the color as needed */
+    font-size: 16px;
+  }
+  
+  .nav-items button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #007bff; /* Change the background color as needed */
+    color: #fff; /* Change the color as needed */
+    font-size: 16px;
+  }
+  
+  .nav-items button:hover {
+    background-color: #0056b3; /* Change the background color as needed */
+  }
+  
+  /* Logo Styles */
+  .logo {
+    width: 100px; /* Adjust the width as needed */
+    height: auto;
+  }
+
+  a {
+    color: rgba(0, 0, 0, 0.9); /* Link color */
+    text-decoration: none; /* Remove underline by default */
+  }
+  
+  /* Hover styles */
+  a:hover {
+    color: crimson; /* Add underline on hover */
+  }

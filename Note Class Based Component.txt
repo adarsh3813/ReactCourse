@@ -1,0 +1,45 @@
+1.  A class based component is a class.
+
+2.  To tell React that it is not a normal class we use React.Component, this comes from "React".
+
+3.  render() method-  You cannot create a class based component without a render() method.
+    Just like in functional component we have a function that returns JSX, here we have a ender method.
+
+4.  If we pass props to a class Based Component, we can access them using- 'this.props' in our class.
+    When we pass props from parent component, react attaches them to the 'this' of the class
+
+5.  state in class based component- 
+    a.  in constructor- we pass props parameter to super like super(props)
+        why- By using super(), we call constructor of parent class. To use this.props or 
+        this inside constructor, we pass the props coming from parent class (React.Component) in super.
+        Necessary because React.Component has its own constructor, it sets up internal React features 
+        and initializes component instance.
+        If you don't call super(props) within constructor of a subclass, you run into issues with
+        your component not being properly initialized by React.
+
+    b.  constructor is called to initialize every instance, so we create state variables inside constructor.
+        'this' gives us state object. ex:
+        this.state = {count: 0, count2: 1}
+        we initialize like this, and all state vars are created in state object
+    
+    c.  To change state- we have this.setState(state). this takes an modified object an input. 
+        ex: this.setState({count: 1, count2: 2})
+        Never mutate state directly. 
+    
+    d.  Lifecycle of class based components- first constructor, render, componentDidMount
+
+    e.  componentDidMount- called after render is complete
+
+6.  Lifecycle methods diagram-
+    a.  render phase- constructor and render method is called
+    b.  Commit phase- react updates the DOM, componentDidMount is called 
+    c.  in case of multiple children- first render phase will complete for all, then commnit phase will start.
+        if componentDidMount for first child is called, then it will delay the rendering of the second child
+    d.  After all render done, react updates DOM and calls componentDidMount for all children in UI order
+    e.  There is componentDidUpdate- called everytime after component updates due to change in state var
+    f.  There is componentWillUnmount- called before component unmounts,
+        used for cleanup 
+        For unmounting and cleanup in useEffect()- return a method from inside useEffect() like:
+            return () => {
+                console.log('cleanup')
+            }
