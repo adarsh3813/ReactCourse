@@ -1,5 +1,5 @@
 // Names import
-import { IMG_CDN_URL } from "../config";
+import { IMG_CDN_URL } from "../constants";
 
 // Used destructuring of props object restaurant
 // Can also use props

@@ -7,14 +7,10 @@ class About extends Component {
     this.state = {
       isProfileVisible: false,
     };
-    console.log("About constructor");
   }
-  componentDidMount() {
-    console.log("Aout componentDidMount");
-  }
+  componentDidMount() {}
 
   render() {
-    console.log("About Render");
     const { isProfileVisible } = this.state;
     return (
       <div>

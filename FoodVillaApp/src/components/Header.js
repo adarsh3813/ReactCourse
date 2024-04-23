@@ -26,6 +26,9 @@ const Header = () => {
             <Link to="/about">About</Link>
           </li>
           <li>
+            <Link to="/instamart">Instamart</Link>
+          </li>
+          <li>
             <Link to="/contact">Contact</Link>
           </li>
           <li>Cart</li>
