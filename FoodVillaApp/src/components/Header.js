@@ -5,7 +5,7 @@ import useIsOnline from "../utils/useIsOnline";
 const Title = () => (
   <a href="/">
     <img
-      className="w-52"
+      className="w-44"
       alt="logo"
       src="https://cdn.worldvectorlogo.com/logos/zomato-1.svg"
     />
@@ -17,36 +17,32 @@ const Header = () => {
   const onlineStatus = useIsOnline();
 
   return (
-    <div className="flex justify-between bg-slate-300 shadow-lg p-3">
+    <div className="flex justify-between bg-blue-200 shadow-lg p-2">
       <Title></Title>
       <div className="flex items-center">
         <ul className="flex p-2 m-2 items-center">
-          <li className="px-4">{onlineStatus ? "✅ Online" : "🔴 Offline"}</li>
-          <li className="px-4">
+          <li className="px-4 font-bold">
+            {onlineStatus ? "✅ Online" : "🔴 Offline"}
+          </li>
+          <li className="px-4 font-bold hover:text-red-800">
             <Link to="/">Home</Link>
           </li>
-          <li className="px-4">
+          <li className="px-4 font-bold hover:text-red-800">
             <Link to="/about">About</Link>
           </li>
-          <li className="px-4">
+          <li className="px-4 font-bold hover:text-red-800">
             <Link to="/instamart">Instamart</Link>
           </li>
-          <li className="px-4">
+          <li className="px-4 font-bold hover:text-red-800">
             <Link to="/contact">Contact</Link>
           </li>
-          <li className="px-4">Cart</li>
-          {isLogggedIn ? (
-            <button className="px-4" onClick={() => setIsLoggedIn(false)}>
-              Logout
-            </button>
-          ) : (
-            <button
-              className="p-2 bg-red-600 text-white"
-              onClick={() => setIsLoggedIn(true)}
-            >
-              Login
-            </button>
-          )}
+          <li className="px-4 font-bold hover:text-red-800">Cart</li>
+          <button
+            className="px-3 py-2 bg-red-800 text-white rounded-lg"
+            onClick={() => setIsLoggedIn(false)}
+          >
+            {isLogggedIn ? "Logout" : "Login"}
+          </button>
         </ul>
       </div>
     </div>

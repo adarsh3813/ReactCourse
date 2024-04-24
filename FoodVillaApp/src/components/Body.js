@@ -36,7 +36,7 @@ const Body = () => {
         allRestaurants={allRestaurants}
         setFilteredRestaurants={setFilteredRestaurants}
       />
-      <div className="flex flex-wrap">
+      <div className="px-10 flex flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
             <Link

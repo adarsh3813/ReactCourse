@@ -4,7 +4,7 @@ import { filterData } from "../utils/helper";
 const SearchBar = ({ allRestaurants, setFilteredRestaurants }) => {
   const [searchInput, setSearchInput] = useState("");
   return (
-    <div className="flex w-full justify-items-end">
+    <div className="px-4 flex w-full justify-items-end">
       <div className="w-1/2 m-4 p-4">
         <input
           type="text"
@@ -18,7 +18,7 @@ const SearchBar = ({ allRestaurants, setFilteredRestaurants }) => {
       </div>
       <div className="flex items-center">
         <button
-          className="px-4 py-2 bg-green-300 m-4 rounded-lg hover:bg-green-400"
+          className="px-4 py-2 bg-green-800 m-4 rounded-lg hover:bg-green-600 text-white"
           onClick={() => {
             const data = filterData(searchInput, allRestaurants);
             setFilteredRestaurants(data);
