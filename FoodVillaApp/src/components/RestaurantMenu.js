@@ -2,46 +2,50 @@ import { useParams } from "react-router-dom";
 import { IMG_CDN_URL } from "../constants";
 import Shimmer from "./Shimmer";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
+import RestaurantCategory from "./RestaurantCategory";
 
 const RestaurantMenu = () => {
   const { restaurantId } = useParams();
   const [restaurantData, restaurantInfo] = useRestaurantMenu(restaurantId);
+  const categories = restaurantData?.filter((c) => {
+    return (
+      c.card?.card?.["@type"] ==
+      "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+    );
+  });
 
   return !restaurantData ? (
     <Shimmer />
   ) : (
-    <div className="restaurant-menu">
-      <div className="restaurant-card">
-        <img src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId} />
-        <h2>{restaurantInfo?.name}</h2>
-        <h2>
-          📌 {restaurantInfo?.locality}, {restaurantInfo?.areaName}
-        </h2>
-      </div>
-      <div className="menu">
-        <h2>Menu</h2>
-        <div className="restaurant-item-group">
-          {restaurantData.map((e) => {
-            const item = e.card.card;
-            if (item["@type"].includes("v2.ItemCategory")) {
-              return (
-                <div key={item.title} className="restaurant-single-item-card">
-                  <h3>{item.title}</h3>
-                  <div>
-                    {item.itemCards.map((card) => (
-                      <div key={card.card.info.id}>
-                        <h4>{card.card.info.name}</h4>
-                        <p>{card.card.info.description}</p>
-                        <p>Price: {card.card.info.price}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              );
-            }
-            return null;
-          })}
+    <div>
+      <div className="py-4 flex justify-evenly border-b-8">
+        <div className="w-1/2">
+          <h1 className="font-bold my-6 text-4xl">{restaurantInfo?.name}</h1>
+          <h3 className="font-bold my-2 text-lg">
+            📌{restaurantInfo?.locality}, {restaurantInfo?.areaName}
+          </h3>
+          <h3 className="font-bold my-2 text-lg">
+            {restaurantInfo?.cuisines.join(", ")} -{" "}
+            {restaurantInfo?.costForTwoMessage}
+          </h3>
+          <h2 className="font-bold my-2 text-lg">
+            {restaurantInfo?.avgRating}⭐
+          </h2>
         </div>
+        <div>
+          <img
+            className="size-72 rounded-md"
+            src={IMG_CDN_URL + restaurantInfo?.cloudinaryImageId}
+          />
+        </div>
+      </div>
+      <div>
+        {categories.map((category) => (
+          <RestaurantCategory
+            key={category?.card?.card?.title}
+            cardData={category?.card?.card}
+          />
+        ))}
       </div>
     </div>
   );
