@@ -1,5 +1,6 @@
 import { Component } from "react";
 import Profile from "./Profile";
+import UserContext from "../utils/UserContext";
 
 class About extends Component {
   constructor(props) {
@@ -17,6 +18,15 @@ class About extends Component {
         <h1>About Us</h1>
         <h2>
           This page is a about page for my demo foddvilla app 🍇🍈🍉🍊🍌🍒😋
+        </h2>
+        <h2>
+          Logged in User:{" "}
+          <UserContext.Consumer>
+            {(data) => {
+              // console.log(data);
+              return <>{data.loggedInUser}</>;
+            }}
+          </UserContext.Consumer>
         </h2>
         {isProfileVisible ? (
           <>
