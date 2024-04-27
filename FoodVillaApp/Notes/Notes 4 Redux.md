@@ -11,3 +11,12 @@
 - How can we read data from slice- We have a 'selector'- reads data from store
 - This phenomenon is 'subscribing to the store' - means in-sync with our store
 - See diagram to understand flow
+
+* How to create a store- use configureStore(),
+* How to creata a slice- createSlice({configuration})
+
+  - configuration- name (of slice), initialValue (object), reducers (object, with action name as key)
+  - functions inside actions- take state, action parameter
+
+* How to fetch- Selector- useSelector hook. ex- useSelector((state) => state.cart.items)
+  - How to dispatch- useDispatch hook.

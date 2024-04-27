@@ -39,7 +39,7 @@ const SearchBar = ({ allRestaurants, setFilteredRestaurants }) => {
           Top Rated Restaurants
         </button>
       </div>
-      <div className="m-2 p-4">
+      <div className="p-4 flex items-center">
         <label>Context Check Label</label>
         <input
           type="text"

@@ -1,6 +1,6 @@
 import React, { Suspense, lazy, useEffect, useState } from "react";
 import ReactDOM from "react-dom/client";
-
+import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 
 // default import
@@ -12,6 +12,8 @@ import Contact from "./components/Contact";
 import RestaurantMenu from "./components/RestaurantMenu";
 import Shimmer from "./components/Shimmer";
 import UserContext from "./utils/UserContext";
+import appStore from "./utils/appStore";
+import Cart from "./components/Cart";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const Instamart = lazy(() => import("./components/Instamart"));
@@ -27,13 +29,15 @@ const AppLayout = () => {
   }, []);
 
   return (
-    <>
+    <Provider store={appStore}>
       <UserContext.Provider value={{ loggedInUser: userName, setUserName }}>
-        <Header />
-        <Outlet />
-        <Footer />
+        <div>
+          <Header />
+          <Outlet />
+          {/* <Footer /> */}
+        </div>
       </UserContext.Provider>
-    </>
+    </Provider>
   );
 };
 
@@ -46,6 +50,7 @@ const appRouter = createBrowserRouter([
       { path: "/about", element: <About /> },
       { path: "/", element: <Body /> },
       { path: "/contact", element: <Contact /> },
+      { path: "/cart", element: <Cart /> },
       { path: "/restaurant/:restaurantId", element: <RestaurantMenu /> },
       {
         path: "/instamart",
