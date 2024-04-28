@@ -19,4 +19,11 @@
   - functions inside actions- take state, action parameter
 
 * How to fetch- Selector- useSelector hook. ex- useSelector((state) => state.cart.items)
+
   - How to dispatch- useDispatch hook.
+
+* In vanilla redux-
+  - mutating state directly was prohibited
+  - we had to- create a copy of state make changes in the copy
+  - In redux toolkit- we can mutate state directly
+  - internally- rtk uses a library called immer- which allows us to mutate state directly
